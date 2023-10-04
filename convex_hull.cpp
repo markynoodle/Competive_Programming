@@ -45,7 +45,7 @@ int main(){
     sz--;
     reverse(pts.begin(), pts.end());
     for(int i =0 ;i<n; i++){
-        while(sz >= 2 && 0 > crossproduct(hull[sz-2], hull[sz-1], pts[i])){
+        while(sz >= 2 && 0 > crossproduct(hull[sz-2], hull[sz-1], pts[i])){  // make equallity if you want min number of pts and ">" if you want max num of pts
             hull.pop_back();
             sz--;
         }
@@ -57,3 +57,20 @@ int main(){
     cout<<sz<<"\n";
     for(auto k : hull)cout<<k.x<<" "<<k.y<<"\n";
 }
+
+/*
+Input:
+6
+2 1
+2 5
+3 3
+4 3
+4 4
+6 3
+Output:
+4
+2 1
+2 5
+4 4
+6 3
+*/
